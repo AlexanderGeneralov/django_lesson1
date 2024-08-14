@@ -30,3 +30,13 @@ def workdir_view(request):
     msg = f"Содержимое текущего каталога: {list_dir}"
     return HttpResponse(msg)
 
+def hello_view(request):
+    name = request.GET.get('name')
+    age = int(request.GET.get('age', 20))
+    print(age)
+    return HttpResponse(f"Hello, {name}, from django!")
+
+
+def summ(requeset, op1, op2):
+    res = op1 + op2
+    return HttpResponse(f"summ = {res}")

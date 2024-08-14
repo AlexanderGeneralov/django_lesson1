@@ -28,3 +28,34 @@ DATA = {
 #     'ингредиент2': количество2,
 #   }
 # }
+
+
+def omlet(request):
+    servigs = int(request.GET.get('servings', 1))
+    context = {
+        'recipe': DATA['omlet'],
+        'servings': servigs
+        }
+
+    return render(request, 'calculator/index.html', context)
+
+
+def pasta(request):
+    servigs = int(request.GET.get('servings', 1))
+    context = {
+        'recipe': DATA['pasta'],
+        'servings': servigs
+        }
+
+    return render(request, 'calculator/index.html', context)
+
+
+def buter(request):
+    servigs = int(request.GET.get('servings', 1))
+    context = {
+        'recipe': DATA['buter'],
+        'servings': servigs
+        }
+
+    return render(request, 'calculator/index.html', context)
+

@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app.views import home_view, time_view, workdir_view
+from app.views import home_view, time_view, workdir_view, hello_view, summ
 
 
 urlpatterns = [
@@ -23,4 +23,6 @@ urlpatterns = [
     path('current_time/', time_view, name='time'),
     path('workdir/', workdir_view, name='workdir'),
     path('admin/', admin.site.urls),
+    path('hello/', hello_view),
+    path('summ/<int:op1>/<int:op2>/', summ)
 ]
